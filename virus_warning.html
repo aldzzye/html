@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ Virus Warning ⚠️</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: red;
+      font-size: 3em;
+      animation: blink 1s infinite;
+      text-shadow: 0 0 10px red;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .popup {
+      border: 2px solid red;
+      background-color: #111;
+      width: 70%;
+      margin: 40px auto;
+      padding: 25px;
+      box-shadow: 0 0 30px red;
+      text-align: left;
+      color: lime;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 20px red; }
+      50% { box-shadow: 0 0 40px red; }
+    }
+
+    .popup p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      margin: 25px auto 0;
+      background-color: red;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px red;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background-color: darkred;
+      box-shadow: 0 0 25px red;
+    }
+
+    .warning {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: red;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ VIRUS TERDETEKSI ⚠️</h1>
+
+  <div class="popup">
+    <p><b>VIRUS MALWARE</b> telah terdeteksi di sistem Anda!</p>
+    <p>Harap segera menghubungi pemilik komputer ini untuk memperbaiki sistem Anda.</p>
+    <p>Jika tidak diperbaiki dalam waktu 1 menit, data mungkin akan <b>terhapus secara permanen</b>.</p>
+    <button class="btn" onclick="fixVirus()">Perbaiki Sekarang</button>
+  </div>
+
+  <!-- Suara beep -->
+  <audio id="alarm" loop>
+    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+  </audio>
+
+  <script>
+    function fixVirus() {
+      // Ganti dengan video YouTube kamu
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+
+    // Mainkan suara alarm otomatis
+    window.onload = function() {
+      const audio = document.getElementById('alarm');
+      audio.volume = 0.4;
+      audio.play().catch(() => {
+        console.log("Klik halaman dulu untuk mengaktifkan suara");
+      });
+    };
+  </script>
+</body>
+</html>
